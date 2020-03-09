@@ -1,0 +1,25 @@
+.main-chat
+  .main-chat_main-header
+    .main-chat_main-header_left-box
+      %h2.main-chat_main-header_left-box_current-group
+        ooooo
+      %ul.main-chat_main-header_left-box_member-list
+        Member
+        %li.main-chat_main-header_left-box_member-list_member
+          Tom
+    #a{ href: '/groups/21516/edit'}
+      .main-chat_main-header_edit-btn
+        Edit
+  .main-chat_messages
+  
+  .main-chat_form
+    %form.main-chat_form_new_message{"id":"newmessage","enctype": "multipart/form-data","action": "/groups/21815/messages","accept-charset": "UTF-8","method":"post" }
+      %input{:name => "utf8",:type => "hidden", :value => "#"}
+      %input{:type => "hidden",:name => "authenticity_token",:value => "grtQe5ZZ1xFx0z8VW5tYbRqih/IHtikInYT8XsD2FU3rn8N+/puhPvG3Si4PoaOuBoQjK36UvG+zWkGalWoExA=="}
+      .main-chat_form_new_message_input-box
+        %input.main-chat_form_new_message_input-box_text{:placeholder => "type a message",:type =>"text",:name => "message[content]",:id => "message_content"}
+        %label.main-chat_form_new_message_input-box_image{:for => "message_image",}
+          %i.fafa-image
+          %input.main-chat_form_new_message_input-box_image_file{:type => "file",:name => "message[image]",:id => "message_image"}
+      %input{:type => "submit",:name => "commit",
+      :value => "Send",:class => "submit-btn",:data-disable-with => "Send"}

@@ -1,0 +1,20 @@
+.side-bar
+  .side-bar_header
+    .side-bar_header_box
+      %p.side-bar_header_box_user_name
+        masa
+      %ul.side-bar_header_box_menu
+        %li.side-bar_header_box_menu_newgroup
+          = link_to "#" do
+            = icon('fas', 'edit', class: 'icon')
+        %li.side-bar_header_box_menu_edituser
+          = link_to "#" do
+            = icon('fas', 'cog', class: 'icon')
+  .groups
+    %a{href: "#"}
+      .groups_group
+        %p.groups_group_group_name
+          00000
+        %p.groups_group_latest-message
+          まだメッセージがありません
+        
