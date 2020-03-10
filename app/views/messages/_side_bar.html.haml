@@ -3,13 +3,12 @@
     = current_user.name
     .side-bar_header_box
       %p.side-bar_header_box_user_name
-        masa
       %ul.side-bar_header_box_menu
         %li.side-bar_header_box_menu_newgroup
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('fas', 'edit', class: 'icon')
         %li.side-bar_header_box_menu_edituser
-          = link_to "edit_user_path(current_user)" do
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
   .groups
     = link_to "#" do
