@@ -7,7 +7,7 @@
         Member
         %li.main-chat_main-header_left-box_member-list_member
           Tom
-    = link_to "/groups/21516/edit"
+    = link_to "/groups/21516/edit" do
       .main-chat_main-header_edit-btn
         Edit
   .main-chat_messages
@@ -23,5 +23,4 @@
           = link_to "#" do
             = icon('far', 'images', class: 'icon')
           %input.main-chat_form_new_message_input-box_image_file{type:"file",name:"message[image]",id:"message_image"}
-      %input{type:"submit",name:"commit",
-      value:"Send",class:"submit-btn",data-disable-with:"Send"}
+      %input{type:"submit",name:"commit", value:"Send",class:"submit-btn",datadisablewith:"Send"}
