@@ -11,7 +11,7 @@
       .main-chat_main-header_edit-btn
         Edit
   .main-chat_messages
-  
+    = render @messages
   .main-chat_form
     %form.main-chat_form_new_message{"id":"newmessage","enctype": "multipart/form-data","action": "/groups/21815/messages","accept-charset": "UTF-8","method":"post" }
       %input{name:"utf8",type:"hidden", value:"#"}
