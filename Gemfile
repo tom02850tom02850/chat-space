@@ -55,9 +55,13 @@ gem 'font-awesome-sass'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'devise'
 gem 'pry-rails'
+<<<<<<< Updated upstream
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rspec-rails', '~> 3.5'
 gem 'rails-controller-testing'
 gem 'factory_bot_rails'
 gem 'faker'
+=======
+# gem 'turbolinks', '~> 5'
+>>>>>>> Stashed changes
