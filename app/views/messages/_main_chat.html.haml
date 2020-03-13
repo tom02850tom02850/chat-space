@@ -7,13 +7,13 @@
         Member
         %li.main-chat_main-header_left-box_member-list_member
           Tom
-    = link_to "/groups/21516/edit" do
+    = link_to "/groups/#{@group.id}/edit" do
       .main-chat_main-header_edit-btn
         Edit
   .main-chat_messages
     = render @messages
   .main-chat_form
-    %form.main-chat_form_new_message{"id":"newmessage","enctype": "multipart/form-data","action": "/groups/21815/messages","accept-charset": "UTF-8","method":"post" }
+    %form.main-chat_form_new_message{"id":"newmessage","enctype": "multipart/form-data","action": "/groups/#{@group.id}/messages","accept-charset": "UTF-8","method":"post" }
       %input{name:"utf8",type:"hidden", value:"#"}
       %input{type:"hidden",name:"authenticity_token",value:"grtQe5ZZ1xFx0z8VW5tYbRqih/IHtikInYT8XsD2FU3rn8N+/puhPvG3Si4PoaOuBoQjK36UvG+zWkGalWoExA=="}
       .main-chat_form_new_message_input-box
@@ -23,4 +23,4 @@
           = link_to "#" do
             = icon('far', 'images', class: 'icon')
           %input.main-chat_form_new_message_input-box_image_file{type:"file",name:"message[image]",id:"message_image"}
-      %input{type:"submit",name:"commit", value:"Send",class:"submit-btn",datadisablewith:"Send"}
+      %input{type:"submit",name:"commit", value:"Send",class:"submit-btn",data_disable_with:"Send"}
