@@ -44,7 +44,6 @@ $(function(){
   $('.main__message').animate({scrollTop: $('.main__message')[0].scrollHeight}, 'fast');
 }
 $('#newmessage').on('submit', function(e){
-  console.log("aaa")
  e.preventDefault();
  var formData = new FormData(this);
  var url = $(this).attr('action')
@@ -61,5 +60,8 @@ $('#newmessage').on('submit', function(e){
     $('.messages').append(html);      
     $('form')[0].reset();
   })
+  .fail(function(){
+    alert('error');
+  });
 })
 });
