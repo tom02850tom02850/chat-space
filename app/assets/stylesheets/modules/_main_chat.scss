@@ -33,11 +33,40 @@
     }
   }
   &_messages {
-    height: calc(100vh - 190px);
-    padding: 46px 40px;
     background-color: #fafafa;
+    height: calc(100vh - 190px);
+    padding: 35px 40px;
     overflow: scroll;
+    &_message {
+      &_upper-message {
+        display: flex;
+        &__user-name {
+          color: $black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: $light_gray;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      }
+      &_lower-message {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        &_content {
+          color: $black;
+          font-size: 14px;
+        }
+        &_image {
+          width: 200px;
+          height: 200px;
+          object-fit: contain;
+        }
+      }
+    }
   }
+
   &_form {
     height: 90px;
     padding: 20px 40px;
@@ -54,11 +83,17 @@
           color: #434a54;
           border-style: none;
       }
-      &_image_file {
-        display: none;
-        width: 100px;
-        height: 50px;
-      }}
+        &_image {
+          position: absolute;
+          top: 7px;
+          right: 14px;
+        }
+        &_image_file{
+          display: none;
+          width: 100px;
+          height: 50px;
+      }
+      }
     .submit-btn {
       width: 100px;
       height: 50px;

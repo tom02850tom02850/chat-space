@@ -19,7 +19,7 @@ $(function(){
          <img src=${message.image} >
        </div>`
      return html;
-   } else {
+    else {
      var html =
       `<div class="message">
          <div class="upper-message">
@@ -38,7 +38,7 @@ $(function(){
        </div>`
      return html;
    };
- }
+ }}
 
  function ScrollToNewMessage(){
   $('.main__message').animate({scrollTop: $('.main__message')[0].scrollHeight}, 'fast');

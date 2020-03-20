@@ -2,11 +2,12 @@
   .main-chat_main-header
     .main-chat_main-header_left-box
       %h2.main-chat_main-header_left-box_current-group
-        ooooo
+        = @group.name
       %ul.main-chat_main-header_left-box_member-list
-        Member
         %li.main-chat_main-header_left-box_member-list_member
-          Tom
+          Menber:
+          - @group.users.each do |user|
+            =user.name
     = link_to "/groups/#{@group.id}/edit" do
       .main-chat_main-header_edit-btn
         Edit
@@ -19,8 +20,7 @@
       .main-chat_form_new_message_input-box
         %input.main-chat_form_new_message_input-box_text{placeholder:"type a message",type:"text",name:"message[content]",id:"message_content"}
         %label.main-chat_form_new_message_input-box_image{for:"message_image",}
-          %i.main-chat_form_new_message_input-box_image_fa
-          = link_to "#" do
+          %i.main-chat_form_new_message_input-box_image
             = icon('far', 'images', class: 'icon')
           %input.main-chat_form_new_message_input-box_image_file{type:"file",name:"message[image]",id:"message_image"}
       %input{type:"submit",name:"commit", value:"Send",class:"submit-btn",data_disable_with:"Send"}

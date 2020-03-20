@@ -4,6 +4,7 @@
   background-color: #253141;
   float: left;
   &_header {
+    color: white;
     background-color: #253141;
     height: 100px;
     width: 300px;
@@ -24,7 +25,8 @@
         &_menu {  
           display: flex;
           &_newgroup {
-            argin-left: 0.3rem
+          
+            
           }
           &_edituser {
             argin-left: 0.3rem
