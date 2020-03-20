@@ -24,12 +24,11 @@
         }
         &_menu {  
           display: flex;
-          &_newgroup {
-          
-            
+          &_newgroup-btn {
+            color: white;
           }
-          &_edituser {
-            argin-left: 0.3rem
+          &_edituser-btn {
+            color: white;
           }
         }
     }}    

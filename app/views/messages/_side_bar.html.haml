@@ -6,10 +6,10 @@
       %ul.side-bar_header_box_menu
         %li.side-bar_header_box_menu_newgroup
           = link_to new_group_path do
-            = icon('fas', 'edit', class: 'icon')
+            = icon('fas', 'edit', class: 'side-bar_header_box_menu_newgroup-btn')
         %li.side-bar_header_box_menu_edituser
           = link_to edit_user_path(current_user) do
-            = icon('fas', 'cog', class: 'icon')
+            = icon('fas', 'cog', class: 'side-bar_header_box_menu_edituser-btn')
   .groups
     - current_user.groups.each do |group|
       .groups_group
