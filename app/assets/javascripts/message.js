@@ -1,71 +1,75 @@
 $(function(){ 
-  function buildHTML(message){
+
+  function buildHTML(message) {
+    // console.log(message)
+    // var id = message.id
+    // console.log(id)
    if ( message.image ) {
-     var html = `<div class="message" data-message-id=` + message.id + `>`
-      `<div class="message">
-         <div class="upper-message">
-           <div class="upper-message__user-name">
+     var html =` <div class="main-chat_messages_message" data-id="${message.id}">
+         <div class="main-chat_messages_message_upper-message">
+           <div class="main-chat_messages_message_upper-message__user-name">
              ${message.user_name}
            </div>
-           <div class="upper-message__date">
+           <div class="main-chat_messages_message_upper-message__date">
              ${message.created_at}
            </div>
          </div>
-         <div class="lower-message">
-           <p class="lower-message__content">
+         <div class="main-chat_messages_lower-message">
+           <p class="lower-message_content">
              ${message.content}
            </p>
          </div>
          <img src=${message.image} >
        </div>`
      return html;
-    else {
+   }else {
      var html =
-      `<div class="message">
-         <div class="upper-message">
-           <div class="upper-message__user-name">
+      ` <div class="main-chat_messages_message" data-id="${message.id}">
+         <div class="main-chat_messages_message_upper-message">
+           <div class="main-chat_messages_message_upper-message__user-name">
              ${message.user_name}
            </div>
-           <div class="upper-message__date">
+           <div class="main-chat_messages_message_upper-message__date">
              ${message.created_at}
            </div>
          </div>
-         <div class="lower-message">
-           <p class="lower-message__content">
+         <div class="lmain-chat_messages_lower-message">
+           <p class="lower-message_content">
              ${message.content}
            </p>
          </div>
        </div>`
      return html;
    };
- }}
+ }
 
- function ScrollToNewMessage(){
-  $('.main__message').animate({scrollTop: $('.main__message')[0].scrollHeight}, 'fast');
-}
-$('#newmessage').on('submit', function(e){
- e.preventDefault();
- var formData = new FormData(this);
- var url = $(this).attr('action')
- $.ajax({
-   url: url,
-   type: "POST",
-   data: formData,
-   dataType: 'json',
-   processData: false,
-   contentType: false
- })
+
+ $('#newmessage').on('submit', function(e){
+  e.preventDefault();
+  var formData = new FormData(this);
+  var url = $(this).attr('action')
+  $.ajax({
+    url: url,
+    type: "POST",
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false
+  })
   .done(function(data){
     var html = buildHTML(data);
-    $('.messages').append(html);      
+    $('.main-chat_messages').append(html);      
     $('form')[0].reset();
+    $('.main-chat_messages').animate({scrollTop: $('.main-chat_messages')[0].scrollHeight}, 'fast');
   })
   .fail(function(){
     alert('error');
   });
 })
-var reloadMessages = function() {
-  var last_message_id = $('.message:last').data("message-id");
+
+ var reloadMessages = function() {
+   last_message_id = $('.main-chat_messages_message').last().attr("data-id");
+  console.log(last_message_id)
   $.ajax({
     url: "api/messages",
     type: 'get',
@@ -85,8 +89,9 @@ var reloadMessages = function() {
   .fail(function() {
     alert('error');
   });
-};
-if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+ };
+
+ if (document.location.href.match(/\/groups\/\d+\/messages/)) {
   setInterval(reloadMessages, 7000);
-}
-});
+ }
+})
