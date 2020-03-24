@@ -40,6 +40,7 @@
     padding: 20px 20px 0;
     overflow: scroll;
     &_group {
+      text-decoration: none;
       margin-bottom: 40px;
       &_group_name {
         color: #ffffff;
@@ -55,3 +56,4 @@
     }
   }
 }
+
